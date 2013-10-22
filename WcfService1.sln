@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDBConnector", "WcfService1\MongoDBConnector.csproj", "{0C3E5854-75D2-4CA6-9C28-D2E0F05BCE76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{0521E2E7-9D25-4A81-97C7-AA97891A3BA1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0C3E5854-75D2-4CA6-9C28-D2E0F05BCE76} = {0C3E5854-75D2-4CA6-9C28-D2E0F05BCE76}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{E11E50F0-1FE1-4FE4-A3DF-849AECB91F57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareEntity", "ShareEntity\ShareEntity.csproj", "{D5485032-BA40-4001-AEF7-EF9B3497BD20}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C3E5854-75D2-4CA6-9C28-D2E0F05BCE76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C3E5854-75D2-4CA6-9C28-D2E0F05BCE76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C3E5854-75D2-4CA6-9C28-D2E0F05BCE76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C3E5854-75D2-4CA6-9C28-D2E0F05BCE76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0521E2E7-9D25-4A81-97C7-AA97891A3BA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0521E2E7-9D25-4A81-97C7-AA97891A3BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0521E2E7-9D25-4A81-97C7-AA97891A3BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0521E2E7-9D25-4A81-97C7-AA97891A3BA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E11E50F0-1FE1-4FE4-A3DF-849AECB91F57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E11E50F0-1FE1-4FE4-A3DF-849AECB91F57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E11E50F0-1FE1-4FE4-A3DF-849AECB91F57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E11E50F0-1FE1-4FE4-A3DF-849AECB91F57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5485032-BA40-4001-AEF7-EF9B3497BD20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5485032-BA40-4001-AEF7-EF9B3497BD20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5485032-BA40-4001-AEF7-EF9B3497BD20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5485032-BA40-4001-AEF7-EF9B3497BD20}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

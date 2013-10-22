@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BasicGrid.ascx.cs" Inherits="WebApplication1.Component.BasicGrid" %>
+<asp:GridView runat="server" ID="Grid" OnDataBinding="BasicGrid_OnDataBinding"></asp:GridView>
