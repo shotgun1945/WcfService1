@@ -8,14 +8,11 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            //MongoDb();
-            var servce = new MongoDbService();
-            Console.WriteLine("Plesase Enter Your Name");
-            var message = servce.SampleMethod(Console.ReadLine());
+            //DB 관리 프로그램
 
-            Console.WriteLine(message);
-            Console.ReadLine();
-            
+            Console.WriteLine("1. Database 모두 출력 \n");
+            Console.WriteLine("1. DB 서버 상태 확인");
+            Console.WriteLine("명령을 입력하세요:");
         }
     }
 }

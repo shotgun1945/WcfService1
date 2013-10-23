@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.ServiceModel;
 using MongoDB.Bson;
 
@@ -10,16 +11,10 @@ namespace WcfService1
     {
 
         [OperationContract]
-        string GetData(int value);
+        IEnumerable<string> GetCollectionNames();
 
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
-
-        [OperationContract]
-        string SampleMethod(string name);
-
-        [OperationContract]
-        dynamic Find(ObjectId id);
+        dynamic FindOneById(string collectionName, ObjectId id);
 
         [OperationContract]
         bool Save(ObjectId id, dynamic item);

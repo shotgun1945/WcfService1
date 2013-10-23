@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Builders;
@@ -34,25 +35,53 @@ namespace WcfService1
         {
             DatabaseName = dbName;
         }
-
-        private MongoCollection<dynamic> CreateClientAndGetCollection()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        private MongoServer CreateClientAndGetServer()
         {
             var client = new MongoClient(ConnectionString);
-            var server = client.GetServer();
-            //Get database
-            var db = server.GetDatabase(DatabaseName);
+            return client.GetServer();
+        }
+        /// <summary>
+        /// Get database
+        /// </summary>
+        /// <returns></returns>
+        private MongoDatabase CreateClientAndGetDatabase()
+        {
+            var server = CreateClientAndGetServer();
+            return server.GetDatabase(DatabaseName);
+        }
+        private MongoCollection<dynamic> CreateClientAndGetCollection()
+        {
+            var db = CreateClientAndGetDatabase();
+                
             //Get Collection
             return db.GetCollection<dynamic>(CollectionName);
         }
 
 
-        public dynamic FindOneById(ObjectId id)
+        public IEnumerable<string> GetCollectionNames()
         {
+            var database = CreateClientAndGetDatabase();
+            return database.GetCollectionNames();
+        }
+
+        public dynamic FindOneById(string collectionName, ObjectId id)
+        {
+            CollectionName = collectionName;
             var collection = CreateClientAndGetCollection();
             //var query = Query<Entity2>.EQ(e => e.Id, id);
             return collection.FindOneById(id);
         }
-
+        public dynamic FindMany(string collectionName,Func<dynamic> expression, dynamic value  )
+        {
+            CollectionName = collectionName;
+            var collection = CreateClientAndGetCollection();
+            var query = Query<dynamic>.EQ(expression, value);
+            return collection.Find(query);
+        }
         public bool Save(ObjectId id, dynamic item)
         {
             throw new NotImplementedException();

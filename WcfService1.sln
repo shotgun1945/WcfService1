@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDBConnector", "WcfService1\MongoDBConnector.csproj", "{0C3E5854-75D2-4CA6-9C28-D2E0F05BCE76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{0521E2E7-9D25-4A81-97C7-AA97891A3BA1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDBManagement", "ConsoleApplication1\MongoDBManagement.csproj", "{0521E2E7-9D25-4A81-97C7-AA97891A3BA1}"
 	ProjectSection(ProjectDependencies) = postProject
 		{0C3E5854-75D2-4CA6-9C28-D2E0F05BCE76} = {0C3E5854-75D2-4CA6-9C28-D2E0F05BCE76}
 	EndProjectSection
