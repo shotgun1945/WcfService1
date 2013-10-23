@@ -61,7 +61,11 @@ namespace WcfService1
             return db.GetCollection<dynamic>(CollectionName);
         }
 
-
+        public IEnumerable<string> GetDatabaseNames()
+        {
+            var server = CreateClientAndGetServer();
+            return server.GetDatabaseNames();
+        }
         public IEnumerable<string> GetCollectionNames()
         {
             var database = CreateClientAndGetDatabase();

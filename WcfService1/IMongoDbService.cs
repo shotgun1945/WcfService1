@@ -9,6 +9,8 @@ namespace WcfService1
     [ServiceContract]
     public interface IMongoDbService
     {
+        [OperationContract]
+        IEnumerable<string> GetDatabaseNames();
 
         [OperationContract]
         IEnumerable<string> GetCollectionNames();
@@ -27,6 +29,7 @@ namespace WcfService1
 
         [OperationContract]
         bool SetDatabase(string database, string collection);
+
 
         // TODO: 여기에 서비스 작업을 추가합니다.
     }
