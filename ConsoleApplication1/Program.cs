@@ -20,6 +20,7 @@ namespace ConsoleApplication1
                 Console.WriteLine("q:종료");
                 Console.Write("명령을 입력하세요:");
                 var input = Console.ReadLine();
+                Console.WriteLine();
                 if(SwitchInput(input)) return;
                 PrintLastLine();
             }
@@ -44,22 +45,32 @@ namespace ConsoleApplication1
 
         private static void SelectDatabase(MongoDbService service)
         {
-            var input = 0;
+            
             var dbName = string.Empty;
             //똑바로 입력할때까지 while문
             //수정해야될듯..
-            do
+            while(true)
             {
-                input -= 1;
+                
+                int input;
                 var database = PrintDatabase(service);
-                if (database.Count()<input ||input <=0)
-                {
-                    dbName = database[input];
-                    break;
-                }
+                
                 Console.Write("Database 선택: ");
+                var userInput = Console.ReadLine();
+                if (int.TryParse(userInput, out input))
+                {
+                    input -= 1;
+                    if (database.Count() > input && input >= 0)
+                    {
+                        dbName = database[input];
+                        break;
+                    }
+                }
+                else if (userInput.ToLower() =="q")
+                {
+                    return;
+                }
             }
-            while (!int.TryParse(Console.ReadLine(), out input));
 
             
             PrintCollection(service, dbName);
@@ -68,6 +79,7 @@ namespace ConsoleApplication1
         private static List<string> PrintCollection(MongoDbService service, string dbName)
         {
             Console.WriteLine("Collection 모두 출력");
+            service.DatabaseName = dbName;
             var collectionName = service.GetCollectionNames().ToList();
             PrintLine(collectionName);
             return collectionName;
@@ -84,6 +96,7 @@ namespace ConsoleApplication1
         {
             Console.Write("Prees Any Key To Continue.....");
             Console.ReadKey();
+            Console.Clear();
         }
         private static void PrintLine(IEnumerable<string> strings)
         {
