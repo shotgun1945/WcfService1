@@ -46,6 +46,8 @@ namespace ConsoleApplication1
         {
             var input = 0;
             var dbName = string.Empty;
+            //똑바로 입력할때까지 while문
+            //수정해야될듯..
             do
             {
                 input -= 1;
