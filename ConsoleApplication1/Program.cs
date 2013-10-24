@@ -4,6 +4,7 @@ using WcfService1;
 
 namespace ConsoleApplication1
 {
+    using System.Linq;
 
     class Program
     {
@@ -20,6 +21,7 @@ namespace ConsoleApplication1
                 Console.Write("명령을 입력하세요:");
                 var input = Console.ReadLine();
                 if(SwitchInput(input)) return;
+                PrintLastLine();
             }
         }
 
@@ -32,7 +34,7 @@ namespace ConsoleApplication1
                     PrintDatabase(service);
                     break;
                 case "2":
-                    SelectDatabase();
+                    SelectDatabase(service);
                     break;
                 case "q":
                     return true;
@@ -40,29 +42,54 @@ namespace ConsoleApplication1
             return false;
         }
 
-        private static void SelectDatabase()
+        private static void SelectDatabase(MongoDbService service)
         {
+            var input = 0;
+            var dbName = string.Empty;
+            do
+            {
+                input -= 1;
+                var database = PrintDatabase(service);
+                if (database.Count()<input ||input <=0)
+                {
+                    dbName = database[input];
+                    break;
+                }
+                Console.Write("Database 선택: ");
+            }
+            while (!int.TryParse(Console.ReadLine(), out input));
+
             
+            PrintCollection(service, dbName);
         }
 
-        private static void PrintDatabase(MongoDbService service)
+        private static List<string> PrintCollection(MongoDbService service, string dbName)
         {
-            PrintLine("Database 모두 출력");
-            PrintLine(service.GetDatabaseNames());
+            Console.WriteLine("Collection 모두 출력");
+            var collectionName = service.GetCollectionNames().ToList();
+            PrintLine(collectionName);
+            return collectionName;
         }
 
+        private static List<string> PrintDatabase(MongoDbService service)
+        {
+            Console.WriteLine("Database 모두 출력");
+            var databases = service.GetDatabaseNames().ToList();
+            PrintLine(databases);
+            return databases;
+        }
+        private static void PrintLastLine()
+        {
+            Console.Write("Prees Any Key To Continue.....");
+            Console.ReadKey();
+        }
         private static void PrintLine(IEnumerable<string> strings)
         {
             var count = 1;
             foreach (var s in strings)
             {
-                PrintLine(string.Format("{0} {1}", count++, s));
+                Console.WriteLine("{0} {1}", count++, s);
             }
-        }
-
-        private static void PrintLine(string s)
-        {
-            Console.WriteLine("{0}",s);
         }
     }
 }
