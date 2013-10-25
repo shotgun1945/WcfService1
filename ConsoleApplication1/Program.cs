@@ -15,7 +15,7 @@ namespace ConsoleApplication1
             {
                 Console.WriteLine("1. Database 모두 출력");
                 Console.WriteLine("2. Collection 모두 출력");
-                //Console.WriteLine("3. Collection 모두 출력\n");
+                Console.WriteLine("3. MyLife초기 데이터 생성 \n");
                 //Console.WriteLine(". Collection 모두 출력\n");
                 Console.WriteLine("q:종료");
                 Console.Write("명령을 입력하세요:");
@@ -37,10 +37,18 @@ namespace ConsoleApplication1
                 case "2":
                     SelectDatabase(service);
                     break;
+                case "3":
+                    InitMyLifeDB();
+                    break;
                 case "q":
                     return true;
             }
             return false;
+        }
+
+        private static void InitMyLifeDB()
+        {
+            
         }
 
         private static void SelectDatabase(MongoDbService service)

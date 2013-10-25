@@ -5,6 +5,8 @@ using MongoDB.Bson;
 
 namespace WcfService1
 {
+    using System;
+
     // 참고: "리팩터링" 메뉴에서 "이름 바꾸기" 명령을 사용하여 코드 및 config 파일에서 인터페이스 이름  "IMongoDbService"을 변경할 수 있습니다.
     [ServiceContract]
     public interface IMongoDbService
@@ -19,6 +21,9 @@ namespace WcfService1
         dynamic FindOneById(string collectionName, ObjectId id);
 
         [OperationContract]
+        dynamic FindMany(string collectionName, Func<dynamic> expression, dynamic value);
+
+        [OperationContract]
         bool Save(ObjectId id, dynamic item);
 
         [OperationContract]
@@ -28,8 +33,7 @@ namespace WcfService1
         ObjectId Insert(dynamic item);
 
         [OperationContract]
-        bool SetDatabase(string database, string collection);
-
+        bool CreateDatabase(string name, Type dbType);
 
         // TODO: 여기에 서비스 작업을 추가합니다.
     }

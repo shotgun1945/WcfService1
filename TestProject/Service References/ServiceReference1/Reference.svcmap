@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="429ac432-2d26-4847-9656-7f756e1e06db" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:2127/MongoDbService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MongoDbService.xsd" MetadataType="Schema" ID="7837cf08-550a-45f2-9354-6dc86b25fa56" SourceId="1" SourceUrl="http://localhost:2127/MongoDbService.svc?xsd=xsd2" />
+    <MetadataFile FileName="MongoDbService1.xsd" MetadataType="Schema" ID="33a1a8e6-e3a2-4e04-95cb-0c256e509b35" SourceId="1" SourceUrl="http://localhost:2127/MongoDbService.svc?xsd=xsd3" />
+    <MetadataFile FileName="MongoDbService2.xsd" MetadataType="Schema" ID="898df958-75c0-4e09-9b30-563664dc9699" SourceId="1" SourceUrl="http://localhost:2127/MongoDbService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MongoDbService3.xsd" MetadataType="Schema" ID="26a5acbf-2855-48c8-a6c5-0c340cfd6658" SourceId="1" SourceUrl="http://localhost:2127/MongoDbService.svc?xsd=xsd4" />
+    <MetadataFile FileName="MongoDbService.disco" MetadataType="Disco" ID="bbe68bb2-3f61-4e7a-881a-8093bc091659" SourceId="1" SourceUrl="http://localhost:2127/MongoDbService.svc?disco" />
+    <MetadataFile FileName="MongoDbService4.xsd" MetadataType="Schema" ID="8bf14e10-5c55-4938-93ec-315c3f4fb6d3" SourceId="1" SourceUrl="http://localhost:2127/MongoDbService.svc?xsd=xsd0" />
+    <MetadataFile FileName="MongoDbService.wsdl" MetadataType="Wsdl" ID="7b80c0e8-4891-4eb2-aaeb-0bd3e9a329b4" SourceId="1" SourceUrl="http://localhost:2127/MongoDbService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

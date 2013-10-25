@@ -100,12 +100,10 @@ namespace WcfService1
         {
             throw new NotImplementedException();
         }
-
-        public bool SetDatabase(string database, string collection)
+        public bool CreateDatabase(string name, Type type)
         {
             throw new NotImplementedException();
         }
-
         public string Select(string query)
         {
             if (string.IsNullOrEmpty(query))
@@ -173,5 +171,7 @@ namespace WcfService1
             Console.WriteLine("id:{0}, name:{1}", entity.Id, entity.Name);
         }
         #endregion
+
+        
     }
 }

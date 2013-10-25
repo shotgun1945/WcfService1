@@ -31,7 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MongoDB.Bson">
-      <HintPath>..\ConsoleApplication1\bin\Debug\MongoDB.Bson.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MongoDB\CSharpDriver 1.8.3\MongoDB.Bson.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

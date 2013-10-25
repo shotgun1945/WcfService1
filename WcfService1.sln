@@ -13,6 +13,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareEntity", "ShareEntity\ShareEntity.csproj", "{D5485032-BA40-4001-AEF7-EF9B3497BD20}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{DCBF4DCD-5669-436C-A531-1CFCC95777A7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0C3E5854-75D2-4CA6-9C28-D2E0F05BCE76} = {0C3E5854-75D2-4CA6-9C28-D2E0F05BCE76}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

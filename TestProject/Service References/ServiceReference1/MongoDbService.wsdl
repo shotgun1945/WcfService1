@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MongoDbService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:2127/MongoDbService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:2127/MongoDbService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:2127/MongoDbService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:2127/MongoDbService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/MongoDB.Bson" />
+      <xsd:import schemaLocation="http://localhost:2127/MongoDbService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMongoDbService_GetDatabaseNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDatabaseNames" />
+  </wsdl:message>
+  <wsdl:message name="IMongoDbService_GetDatabaseNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDatabaseNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMongoDbService_GetCollectionNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionNames" />
+  </wsdl:message>
+  <wsdl:message name="IMongoDbService_GetCollectionNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMongoDbService_FindOneById_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindOneById" />
+  </wsdl:message>
+  <wsdl:message name="IMongoDbService_FindOneById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindOneByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMongoDbService_FindMany_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindMany" />
+  </wsdl:message>
+  <wsdl:message name="IMongoDbService_FindMany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindManyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMongoDbService_Save_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save" />
+  </wsdl:message>
+  <wsdl:message name="IMongoDbService_Save_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMongoDbService_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="IMongoDbService_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMongoDbService_Insert_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insert" />
+  </wsdl:message>
+  <wsdl:message name="IMongoDbService_Insert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMongoDbService">
+    <wsdl:operation name="GetDatabaseNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMongoDbService/GetDatabaseNames" message="tns:IMongoDbService_GetDatabaseNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMongoDbService/GetDatabaseNamesResponse" message="tns:IMongoDbService_GetDatabaseNames_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMongoDbService/GetCollectionNames" message="tns:IMongoDbService_GetCollectionNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMongoDbService/GetCollectionNamesResponse" message="tns:IMongoDbService_GetCollectionNames_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindOneById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMongoDbService/FindOneById" message="tns:IMongoDbService_FindOneById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMongoDbService/FindOneByIdResponse" message="tns:IMongoDbService_FindOneById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindMany">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMongoDbService/FindMany" message="tns:IMongoDbService_FindMany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMongoDbService/FindManyResponse" message="tns:IMongoDbService_FindMany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMongoDbService/Save" message="tns:IMongoDbService_Save_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMongoDbService/SaveResponse" message="tns:IMongoDbService_Save_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMongoDbService/Update" message="tns:IMongoDbService_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMongoDbService/UpdateResponse" message="tns:IMongoDbService_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMongoDbService/Insert" message="tns:IMongoDbService_Insert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMongoDbService/InsertResponse" message="tns:IMongoDbService_Insert_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IMongoDbService" type="tns:IMongoDbService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDatabaseNames">
+      <soap:operation soapAction="http://tempuri.org/IMongoDbService/GetDatabaseNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionNames">
+      <soap:operation soapAction="http://tempuri.org/IMongoDbService/GetCollectionNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindOneById">
+      <soap:operation soapAction="http://tempuri.org/IMongoDbService/FindOneById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindMany">
+      <soap:operation soapAction="http://tempuri.org/IMongoDbService/FindMany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <soap:operation soapAction="http://tempuri.org/IMongoDbService/Save" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="http://tempuri.org/IMongoDbService/Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert">
+      <soap:operation soapAction="http://tempuri.org/IMongoDbService/Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MongoDbService">
+    <wsdl:port name="BasicHttpBinding_IMongoDbService" binding="tns:BasicHttpBinding_IMongoDbService">
+      <soap:address location="http://localhost:2127/MongoDbService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

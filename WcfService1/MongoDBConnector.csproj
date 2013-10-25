@@ -41,10 +41,10 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MongoDB.Bson">
-      <HintPath>D:\Developer\MangoDB_C#\MongoDB.Bson.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MongoDB\CSharpDriver 1.8.3\MongoDB.Bson.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Driver">
-      <HintPath>..\ConsoleApplication1\bin\Debug\MongoDB.Driver.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MongoDB\CSharpDriver 1.8.3\MongoDB.Driver.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
