@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<GenericTest id="11022ae2-f399-4d87-8b62-2412c75d677e" name="GenericTest1" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+	<SummaryXmlFile path="%TestOutputDirectory%\&lt;여기에 요약 파일의 이름을 입력하십시오.&gt;"/>
+	<Command filename="&lt;여기에 파일의 이름을 입력하십시오.&gt;" workingDirectory="%TestOutputDirectory%"/>
+</GenericTest>

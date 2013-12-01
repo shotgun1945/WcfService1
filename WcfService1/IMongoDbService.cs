@@ -2,6 +2,7 @@
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using MongoDB.Bson;
+using ShareEntity.Entity;
 
 namespace WcfService1
 {
@@ -21,7 +22,10 @@ namespace WcfService1
         dynamic FindOneById(string collectionName, ObjectId id);
 
         [OperationContract]
-        dynamic FindMany(string collectionName, Func<dynamic> expression, dynamic value);
+        dynamic FindMany(Func<dynamic, dynamic> expression, dynamic value);
+
+        [OperationContract]
+        string FindMany(string collectionName, Func<EntityBase, dynamic> expression, dynamic value);
 
         [OperationContract]
         bool Save(ObjectId id, dynamic item);
@@ -30,7 +34,7 @@ namespace WcfService1
         dynamic Update(ObjectId id, dynamic newValue);
 
         [OperationContract]
-        ObjectId Insert(dynamic item);
+        bool Insert(dynamic item);
 
         [OperationContract]
         bool CreateDatabase(string name, Type dbType);

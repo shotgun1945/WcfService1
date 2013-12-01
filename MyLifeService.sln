@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\
 		{0C3E5854-75D2-4CA6-9C28-D2E0F05BCE76} = {0C3E5854-75D2-4CA6-9C28-D2E0F05BCE76}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLifeService", "MyLifeService\MyLifeService.csproj", "{B07F92EC-274E-459C-A38C-AB89FEC118D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLifeServerPage", "MyLifeServerPage\MyLifeServerPage.csproj", "{E7046DB0-9643-4A66-84D9-2ABC1C57A738}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +47,14 @@ Global
 		{DCBF4DCD-5669-436C-A531-1CFCC95777A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCBF4DCD-5669-436C-A531-1CFCC95777A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCBF4DCD-5669-436C-A531-1CFCC95777A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B07F92EC-274E-459C-A38C-AB89FEC118D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B07F92EC-274E-459C-A38C-AB89FEC118D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B07F92EC-274E-459C-A38C-AB89FEC118D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B07F92EC-274E-459C-A38C-AB89FEC118D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7046DB0-9643-4A66-84D9-2ABC1C57A738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7046DB0-9643-4A66-84D9-2ABC1C57A738}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7046DB0-9643-4A66-84D9-2ABC1C57A738}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7046DB0-9643-4A66-84D9-2ABC1C57A738}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

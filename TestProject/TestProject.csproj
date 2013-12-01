@@ -35,6 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\WcfService1\bin\MongoDB.Bson.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -60,12 +64,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="RepositoryTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="GenericTest1.GenericTest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="OrderedTest1.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Service References\ServiceReference1\MongoDbService.wsdl" />
     <None Include="Service References\ServiceReference1\MongoDbService.xsd">
       <SubType>Designer</SubType>
@@ -105,6 +116,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MyLifeService\MyLifeService.csproj">
+      <Project>{b07f92ec-274e-459c-a38c-ab89fec118d4}</Project>
+      <Name>MyLifeService</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ShareEntity\ShareEntity.csproj">
       <Project>{D5485032-BA40-4001-AEF7-EF9B3497BD20}</Project>
       <Name>ShareEntity</Name>

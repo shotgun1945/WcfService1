@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Builders;
+using ShareEntity.Entity;
 
 namespace WcfService1
 {
@@ -79,12 +80,18 @@ namespace WcfService1
             //var query = Query<Entity2>.EQ(e => e.Id, id);
             return collection.FindOneById(id);
         }
-        public dynamic FindMany(string collectionName,Func<dynamic> expression, dynamic value  )
+        public string FindMany(string collectionName, Func<EntityBase, dynamic> expression, dynamic value)
         {
             CollectionName = collectionName;
             var collection = CreateClientAndGetCollection();
-            var query = Query<dynamic>.EQ(expression, value);
-            return collection.Find(query);
+            var query = Query<EntityBase>.EQ(expression, value);
+            MongoCursor<dynamic> cursor = collection.Find(query);
+
+            return cursor.ToJson();
+        }
+        public dynamic FindMany(Func<dynamic,dynamic> expression, dynamic value)
+        {
+            return FindMany(CollectionName, expression, value);
         }
         public bool Save(ObjectId id, dynamic item)
         {
@@ -96,9 +103,16 @@ namespace WcfService1
             throw new NotImplementedException();
         }
 
-        public ObjectId Insert(dynamic item)
+        public bool Insert(dynamic item)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(CollectionName))
+            {
+                throw new MongoDbServiceException("No CollectionName");
+            }
+            var collection = CreateClientAndGetCollection();
+            var result = collection.Insert(item);
+            return result.Ok;
+
         }
         public bool CreateDatabase(string name, Type type)
         {
@@ -143,7 +157,7 @@ namespace WcfService1
             //Save Document
             //Save is sends the entire document back to the server
             entity.Name = "Dick";
-            collection.Save(entity);
+            var r = collection.Save(entity);
             PrintEntity(entity);
             //Update Document
             //Update is sends just Change
@@ -173,5 +187,17 @@ namespace WcfService1
         #endregion
 
         
+    }
+
+    public class MongoDbServiceException : Exception
+    {
+        public MongoDbServiceException()
+        {
+                
+        }
+        public MongoDbServiceException(string message) :base(message)
+        {
+            
+        }
     }
 }
